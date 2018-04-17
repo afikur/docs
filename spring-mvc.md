@@ -1,3 +1,92 @@
+## Spring for Absolute Beginners
+The prerequisite of this doc is `Maven Funamentals`. If you don't know about maven, take a look at [Maven Fundamentals](). In this doc we are using `Intellij Idea Ultimate 18.1`. If you don't know how to create a maven project in Intellij Idea follow this doc [Create Maven Project]().
+
+## Dependencies
+In `pom.xml` add following dependency.
+
+```xml
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>4.3.15.RELEASE</version>
+</dependency>
+```
+So, our `pom.xml` file now looks like this
+<details> 
+  <summary>Click here to see entire pom.xml file</summary>
+   <?xml version="1.0" encoding="UTF-8"?>
+
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+
+        <groupId>com.afikur</groupId>
+        <artifactId>spring-config</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <packaging>war</packaging>
+
+        <name>spring-config Maven Webapp</name>
+        <!-- FIXME change it to the project's website -->
+        <url>http://www.example.com</url>
+
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <maven.compiler.source>1.7</maven.compiler.source>
+            <maven.compiler.target>1.7</maven.compiler.target>
+        </properties>
+
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>4.3.15.RELEASE</version>
+            </dependency>
+        </dependencies> 
+        <build>
+            <finalName>spring-config</finalName>
+            <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>3.0.0</version>
+                    </plugin>
+                    <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>3.0.2</version>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.7.0</version>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.20.1</version>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>3.2.0</version>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-install-plugin</artifactId>
+                        <version>2.5.2</version>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>2.8.2</version>
+                    </plugin>
+                </plugins>
+            </pluginManagement>
+        </build>
+    </project>
+</details>
+
 ## Configuring DispatcherServlet in Java
 
 DispatcherServlet is the centerpiece of Spring MVC . It’s where the request first hits
@@ -7,7 +96,9 @@ components.
 Instead of a web.xml file, you’re going to use Java to configure DispatcherServlet
 in the servlet container. The following listing shows the Java class you’ll need.
 
-Create Java file in `src/main/java/com.afikur.config/AppConfig.java`
+Create a package `com.afikur.config`
+
+Create a Java file `src/main/java/com.afikur.config/AppConfig.java`
 
 ```java
 package com.afikur.config;

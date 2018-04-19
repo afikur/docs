@@ -1,7 +1,7 @@
 ## Hibernate for Absolute Beginners
 Hibernate is java based ORM (Object-relational mapping) tool that provides framework for mapping POJO (plain old java object) to the relational database tables and vice versa.
 
-![alt text](images/hibernate-basic-dir.png "Hibernate Basic Directory Structure")
+![alt text](../images/hibernate-basic-dir.png "Hibernate Basic Directory Structure")
 
 ## Database Table Setup
 ```sql
